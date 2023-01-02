@@ -35,7 +35,6 @@ DEBUG = True
 ALLOWED_HOSTS = ["bricklib.herokuapp.com", "localhost"]
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
