@@ -20,7 +20,7 @@ THEME_CHOICES = (
 
 
 class Set (models.Model):
-    '''Django database model for add new set'''
+    """Django database model for add new set"""
     id = models.UUIDField(
         primary_key=True,
         default=uuid.uuid4,
