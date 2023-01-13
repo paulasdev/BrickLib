@@ -22,11 +22,10 @@
 </head>
 
 <body>
-
-    <!-- Navbar -->
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-       
+    <!-- Container -->
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="https://res.cloudinary.com/drs3eqnpf/image/upload/e_bgremoval/v1673534823/BrickLib/Logo_1_lxeehd.jpg"
                     width="50" height="50" alt="">
@@ -44,87 +43,67 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="#">Login</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="#">Signup</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="#">Logout</a>
                     </li>
                     {% endif %}
                 </ul>
 
-        <!-- Search form -->
+                <!-- Search form -->
                 <div class="input-group ps-5">
-                    <div id="navbar-search-autocomplete" class="form-outline">
-                        <input type="search" id="form1" class="form-control" placeholder="Search" aria-label="Search"/>
+                    <div action="{% url 'search' %}" method="POST" id="navbar-search-autocomplete" class="form-outline">
+                        {% csrf_token %}
+                        <input type="search" id="form1" class="form-control" placeholder="Search" aria-label="Search" />
                     </div>
                     <button type="button" class="btn btn-primary">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
+                {% for result in results %}
+
+                 <p>{{result.set}}</p>
+
+                {% endfor %}
             </div>
-    <!-- Collapsible wrapper -->
-        </div>
+            <!-- Collapsible wrapper -->
+    </div>
     <!-- Container wrapper -->
     </nav>
-
+    </div>
+    <!-- ./End ofcontainer -->
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}
-
-
+        <!-- pages  content -->
         {% endblock content %}
     </main>
 
     <!-- Footer -->
-    <footer class="text-center text-white" style="background-color: #f1f1f1;">
-        <!-- Grid container -->
-        <div class="container">
-          <!-- Section: Social media -->
-          <section class="mb-4">
-            <!-- Facebook -->
-            <a
-              class="btn btn-link btn-floating btn-lg text-dark m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-      
-            <!-- Youtube -->
-            <a
-              class="btn btn-link btn-floating btn-lg text-dark m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-youtube"></i
-            ></a>
-      
-            <!-- Instagram -->
-            <a
-              class="btn btn-link btn-floating btn-lg text-dark m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="dark"
-              ><i class="fab fa-instagram"></i
-            ></a>
-         
-          <!-- Section: Social media -->
-     <!-- Copyright -->
-     <div class="text-center text-dark p-3">
-        © 2023 Copyright:
-        <a class="text-dark" href="https://mdbootstrap.com/">BrickLib.com</a>
-      </div>
-      <!-- Copyright -->
-        </div>
-    </section>
-        <!-- Grid container -->
-      
-   
-      </footer>
+    <footer class="text-center" style="background-color: gray;">
+                <!-- Facebook -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.facebook.com" role="button"
+                    data-mdb-ripple-color="dark" target="_blank" aria-label="Go to our Facebook page"><i
+                        class="fab fa-facebook-f"></i></a>
+
+                <!-- Youtube -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.youtube.com" role="button"
+                    data-mdb-ripple-color="dark" target="_blank" aria-label="Go to our YouTube page"><i
+                        class="fab fa-youtube"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com" role="button"
+                    data-mdb-ripple-color="dark" target="_blank" aria-label="Go to our Instagram page"><i
+                        class="fab fa-instagram"></i></a>
+
+        
+                <p>© 2023 Paula da Silva</p>
+    </footer>
 </body>
 
 </html>
