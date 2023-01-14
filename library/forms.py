@@ -13,9 +13,9 @@ class SetForm(forms.ModelForm):
             'featured_image',
         ]
         label = {
-            'theme': 'Theme Set',
-            'name': 'Brick / Set name',
-            'description': 'ex. Number of pcs, color,', 
+            'theme': '',
+            'name': '',
+            'description': '', 
             'done': '',
         }
         widgets = { 
