@@ -17,6 +17,7 @@ THEME_CHOICES = (
     ('mario', 'MARIO'),
     ('spider-man', 'SPIDER_MAN'),
 )
+def_image = "https://res.cloudinary.com/drs3eqnpf/image/upload/v1673709187/BrickLib/default_zp429f.jpg"
 
 
 class Set (models.Model):
@@ -26,20 +27,17 @@ class Set (models.Model):
         default=uuid.uuid4,
         editable=False)
     author = models.ForeignKey(User,
-                            on_delete=models.CASCADE,
-                            null=False,
-                            blank=False,
-                            related_name='user_sets')
-    theme = models.CharField(max_length=12, choices=THEME_CHOICES, 
-                            default='none')
-    pcs = models.IntegerField()
-    description = models.TextField()
-    is_built = models.BooleanField(default=False)
-    set_number = models.IntegerField()
-    featured_image = CloudinaryField('image', default='placeholder')
+                               on_delete=models.CASCADE,
+                               null=True,
+                               blank=True,
+                               related_name='user_sets')
+    name = models.CharField(max_length=50, blank=False, null=True)
+    theme = models.CharField(max_length=12, choices=THEME_CHOICES, blank=True)
+    description = models.CharField(max_length=300, blank=True, null=True)
+    done = models.BooleanField(default=False)
+    featured_image = CloudinaryField('image', default=def_image)
     likes = models.ManyToManyField(User, related_name='set_likes', blank=True)
     created_on = models.DateTimeField(auto_now=True)
-    
     
 
 def __str__(self):
