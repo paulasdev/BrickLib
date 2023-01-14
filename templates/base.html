@@ -56,7 +56,7 @@
                 </ul>
 
                 <!-- Search form -->
-                    <form id="navbar-search-autocomplete" class="form-outline d-flex" method=POST ACTION="{% url 'search_results' %}">
+                    <form id="navbar-search-autocomplete" class="form-outline d-flex" method=POST action="{% url 'search_results' %}">
                         {% csrf_token %}
                         <input type="search" id="form1" class="form-control" placeholder="Search Bricks" aria-label="Search" name="searched" />
                         <button type="submit" class="btn btn-primary">
