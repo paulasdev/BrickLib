@@ -8,14 +8,21 @@ from .forms import SetForm
 class SetListView(generic.ListView):
     model = Set
     template_name = 'index.html'
-    paginate_by = 4
+    paginate_by = 6
+
+
+def set_list(request):
+    set_list = Set.objects.all()
+
+    return render(request, 'set_list.html', {'set_list' 
+                      'set_list': set_list})
 
 
 def search(request):
     """ search function  """
     if request.method == "POST":
         searched = request.POST['searched']
-        sets = Set.objects.filter(theme__contains=searched)
+        sets = Set.objects.filter(name__contains=searched)
 
         return render(request, 'search.html', {'searched': searched, 
                       'sets': sets})
@@ -34,6 +41,8 @@ def add_set(request):
         form = SetForm
         if 'submitted' in request.GET:
             submitted = True
-            
+
     return render(request, 'add_set.html', {'form': form, 
                 'submitted': submitted})
+
+    
