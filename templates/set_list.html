@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load cloudinary %}
+
+{% block content %}
+
+    <h1>Bricks & Sets</h1>
+    <ul>
+
+        {% for set in set_list %}
+        <li>{{ sets }}</li>
+        
+        {% endfor %}
+    </ul>
+        
+
+{% endblock %}
