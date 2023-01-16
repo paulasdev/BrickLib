@@ -2,23 +2,36 @@
 {% load cloudinary %}
 
 {% block content %}
-    <center>
-        <h1>Add Set to Database</h1>
-        <br/><br/>
-        {% if submitted %}
-            Your Brick Set Was Submitted Succeffuly!!!
-        {% else %}
 
+<section class="account-container hero-container mt-2">
+    <div class="hero-text p-2 flex flex-column flex-md-row">
+        <div id="hero-text-container" class="p-4">
+            <div class="p-4">
+                <div class="p-4">
+                    <div class="p-4">
+                        <h1>Add Set to Database</h1>
+                        <br/><br/>
+                        {% if submitted %}
+                            Your Brick Set Was Submitted Succeffuly!!!
+                        {% else %}
+                
+                        
+                            <form action="" method=POST>
+                                {% csrf_token %}
+                
+                                 {{ form.as_p }}
+                              <input type="submit" value="Submit" class="btn btn-primary">
+                              
+                            </form>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
         
-            <form action="" method=POST>
-                {% csrf_token %}
+    </div>
+</section>
 
-                 {{ form.as_p }}
-              <input type="submit" value="Submit" class="btn btn-primary">
-              
-            </form>
-        {% endif %}
-    </center>
 
 
 
