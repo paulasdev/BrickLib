@@ -18,6 +18,16 @@ def set_list(request):
                       'set_list': set_list})
 
 
+def show_set(request):
+    set_list = Set.objects.filter('title') 
+
+    return render(request, 'show_set.html', {'title': title,
+                                             'theme': theme,
+                                             'featured_image': featured_image,
+                                             'done': done,
+                                             'description': description},)
+
+
 def search(request):
     """ search function  """
     if request.method == "POST":
