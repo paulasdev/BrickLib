@@ -14,7 +14,7 @@ class SetListView(generic.ListView):
 def set_list(request):
     set_list = Set.objects.all()
 
-    return render(request, 'set_list.html', {'set_list' 
+    return render(request, 'set_list.html', {
                       'set_list': set_list})
 
 
@@ -27,7 +27,7 @@ def search(request):
         return render(request, 'search.html', {'searched': searched, 
                       'sets': sets})
     else: 
-        return render(request, 'search.html', {})
+        return render[request, 'search.html', {}]
 
 
 def add_set(request):
