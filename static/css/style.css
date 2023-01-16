@@ -2,12 +2,19 @@ body {
     background-color: #F9FAFC;
 }
 
+.card-title {
+    
+    color: #0a2472;
+
+}
+
 .brand {
     font-family: 'Rampart One', cursive;
     font-size: 1.4rem;
     font-weight: 700;
     color: #0a2472;
 }
+
 
 .light-bg {
     background-color: #fff;
@@ -21,28 +28,20 @@ body {
     background-color: #F9FAFC;
 }
 
-.card {
-    border: none;
-    background-color: transparent;
-}
+
 
 .image-container {
     position: relative;
 }
 
-.image-flash {
+/* .image-flash {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
     left: -2px;
     background-color: #23BBBB;
-}
+} */
 
-.author {
-    color: white;
-    margin: 4px;
-    text-transform: uppercase;
-}
 
 .masthead {
     margin-top: 10px;
