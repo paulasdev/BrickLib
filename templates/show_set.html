@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load cloudinary %}
+
+{% block content %}
+
+  <!-- hero section -->
+  <section class="account-container hero-container mt-2">
+    <div class="hero-text p-2 flex flex-column flex-md-row">
+        <div id="hero-text-container" class="p-4">
+            <div class="p-4">
+                <div class="p-4">
+                    <div class="p-4">
+                        <h2 class="mt-3 text-center">Bricks & Sets</h2>
+                        <h5 class="card-title">{{ set.title }}</h5>
+                        <p class="card-text text-capitalize"><strong>Theme</strong><br/> {{ set.theme }}</p>
+                        <p class="card-text text-capitalize"><strong>Descripton</strong><br/> {{ set.description }}</p>
+                        <p class="card-text text-capitalize"><strong>Done</strong><br/> {{ set.done}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+{%endblock%}
