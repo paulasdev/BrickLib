@@ -43,16 +43,23 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="{% url 'set_list' %}">All Sets</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="{% url 'add_set' %}">Add Bricks & Sets</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Signup</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
+                
                 </ul>
 
                 <!-- Search form -->
@@ -76,14 +83,18 @@
     <!-- ./End ofcontainer -->
 
     <main class="flex-shrink-0 main-bg">
-        {% block content %}
-        <!-- pages  content -->
-        {% endblock content %}
+        <div class="container">
+            {% block content %}
+             <!-- Content Goes here -->
+            {% endblock content %}
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="text-center" style="background-color: gray;">
+    <footer class="footer mt-auto py-3 dark-bg">
+        <p class="m-0 text-center text-white">Paula 2023</p>
                 <!-- Facebook -->
+                <p class="m-0 text-center text-white">Follow us:
                 <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.facebook.com" role="button"
                     data-mdb-ripple-color="dark" target="_blank" aria-label="Go to our Facebook page"><i
                         class="fab fa-facebook-f"></i></a>
@@ -96,10 +107,8 @@
                 <!-- Instagram -->
                 <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com" role="button"
                     data-mdb-ripple-color="dark" target="_blank" aria-label="Go to our Instagram page"><i
-                        class="fab fa-instagram"></i></a>
+                        class="fab fa-instagram"></i></a></p>
 
-        
-                <p>© 2023 Paula da Silva</p>
     </footer>
 </body>
 

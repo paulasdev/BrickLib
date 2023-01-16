@@ -3,14 +3,36 @@
 
 {% block content %}
 
-    <h1>Bricks & Sets</h1>
-    <ul>
+<h1>Bricks & Sets</h1>
+{% for set in set_list %}
 
-        {% for set in set_list %}
-        <li>{{ sets }}</li>
-        
+{% if "placeholder" in set.featured_image.url %}
+<!-- <div class="card-body" style="width: 18rem;">
+    <div class="image-container">
+  
+        </div>      
+    <div>
+</div> -->
+
+<div class="row">
+    <div class="col-sm-6">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-top"
+            src="https://res.cloudinary.com/drs3eqnpf/image/upload/v1673709187/BrickLib/default_zp429f.jpg">
+        {% else %}
+        <img class="card-img-top" src=" {{ set.featured_image.url }}">
+        {% endif %}
+        <div>
+                <h5 class="card-title">{{ set.title }}</h5>
+                <p class="card-text text-capitalize"><strong>Theme</strong><br/> {{ set.theme }}</p>
+                <p class="card-text text-capitalize"><strong>Descripton</strong><br/> {{ set.description }}</p>
+            <small class="text-muted">Last updated {{ set.created_on }}</small>
+        </div>
+      </div>
+    </div>
+    
         {% endfor %}
-    </ul>
-        
 
-{% endblock %}
+
+        {% endblock %}
