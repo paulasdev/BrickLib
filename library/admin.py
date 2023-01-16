@@ -5,6 +5,6 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Set)
 class SetAdmin(admin.ModelAdmin):
-    list_display = ('theme', 'name', 'description', 'done')
-    search_fields = ('theme', 'name', 'description')
+    list_display = ('theme', 'title', 'description', 'done')
+    search_fields = ('theme', 'title', 'description')
     # summernote_fields = ('description')

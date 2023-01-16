@@ -7,18 +7,18 @@ class SetForm(forms.ModelForm):
         model = Set
         fields = [
             'theme',
-            'name',
+            'title',
             'description',
             'done',
             'featured_image',
         ]
         label = {
             'theme': '',
-            'name': '',
+            'title': '',
             'description': '', 
             'done': '',
         }
         widgets = { 
-            'name': forms.TextInput(attrs={'placeholder': 'Bricks & Sets'}),
+            'title': forms.TextInput(attrs={'placeholder': 'Bricks & Sets'}),
             'description': forms.TextInput(attrs={'placeholder': 'e.g. Color, Year, Details'}),
         }
