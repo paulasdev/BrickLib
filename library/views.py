@@ -20,17 +20,16 @@ def set_list(request):
 
 class show_set(View):
     
-  def get(self, request, title, *args, **kwargs):
-        queryset = Set.objects.filter(status=1)
-        set = get_object_or_404(queryset, title=title)
-        if post.likes.filter(id=self.request.user.id).exists():
-            liked = True
+  def get(self, request, id, *args, **kwargs):
+        
+        set = get_object_or_404(Set, id=id)
+    
 
-        return render(request, 'show_set.html', {'title': title,
-                                             'theme': theme,
-                                             'featured_image': featured_image,
-                                             'done': done,
-                                             'description': description},)
+        return render(request, 'show_set.html', {'title': set.title,
+                                             'theme': set.theme,
+                                             'featured_image': set.featured_image,
+                                             'done': set.done,
+                                             'description': set.description},)
 
 
 def search(request):
