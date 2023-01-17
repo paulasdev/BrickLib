@@ -23,8 +23,9 @@
                                 <img class="card-img-top" src=" {{ set.featured_image.url }}" alt="{{set.title}}">
                                 {% endif %}
                             </div>
-                            <a href="{% url 'show_set' %}">
+                            <a href="{% url 'show_set' set.id %}">
                                 <h5 class="card-title text-center">{{ set.title }}</h5>
+                                <h5 class="card-title text-center">{{ set.id }}</h5>
                             </a>
                             <p class="card-text text-capitalize"><strong>Theme</strong><br /> {{ set.theme }}</p>
                             <p class="card-text text-capitalize"><strong>Descripton</strong><br /> {{ set.description }}</p>
