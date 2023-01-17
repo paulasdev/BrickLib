@@ -18,10 +18,15 @@ def set_list(request):
                       'set_list': set_list})
 
 
-def show_set(request):
-    set_list = Set.objects.filter('title') 
+class show_set(View):
+    
+  def get(self, request, title, *args, **kwargs):
+        queryset = Set.objects.filter(status=1)
+        set = get_object_or_404(queryset, title=title)
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
 
-    return render(request, 'show_set.html', {'title': title,
+        return render(request, 'show_set.html', {'title': title,
                                              'theme': theme,
                                              'featured_image': featured_image,
                                              'done': done,
