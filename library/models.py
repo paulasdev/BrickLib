@@ -29,7 +29,7 @@ class Set (models.Model):
     author = models.ForeignKey(User,
                                on_delete=models.CASCADE,
                                related_name="user_sets")
-    title = models.SlugField(max_length=50, null=True)
+    title = models.CharField(max_length=50, null=True)
     theme = models.CharField(max_length=12, choices=THEME_CHOICES, blank=True)
     description = models.TextField()
     done = models.BooleanField(default=False)
