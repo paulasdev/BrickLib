@@ -8,6 +8,8 @@ body {
 
 }
 
+
+
 .brand {
     font-family: 'Rampart One', cursive;
     font-size: 1.4rem;
@@ -34,13 +36,6 @@ body {
     position: relative;
 }
 
-/* .image-flash {
-    position: absolute;
-    bottom: 5%;
-    min-width: 30%;
-    left: -2px;
-    background-color: #23BBBB;
-} */
 
 
 .masthead {
