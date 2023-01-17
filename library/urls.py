@@ -6,5 +6,5 @@ urlpatterns = [
     path('search', views.search, name='search_results'),
     path('add_set', views.add_set, name='add_set'),
     path('set_list', views.set_list, name='set_list'),
-    path('show_set', views.show_set, name='show_set'),
+    path('lego-set/<str:id>', views.show_set.as_view(), name='show_set'),
 ]
