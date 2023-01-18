@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load cloudinary %}
+
 
 {% block content %}
 
@@ -10,20 +10,12 @@
             <div class="p-4">
                 <div class="p-4">
                     <div class="p-4">
-                        <h2 class="mt-3 text-center">Bricks & Sets</h2>
-                        
-                        <div class="image-container"> {{ featured_image }}
-                            {% if "placeholder" in set.featured_image.url %}
-                            <img class="card-img-top"
-                                src="https://res.cloudinary.com/drs3eqnpf/image/upload/v1673709187/BrickLib/default_zp429f.jpg" alt="Yellow Brick Face">
-                            {% else %}
-                            <img class="card-img-top" src=" {{ set.featured_image.url }}" alt="{{set.title}}">
-                            {% endif %}
-                        </div>
+                        <h2 class="mt-3 text-center">Bricks & Sets Details</h2>
+                        <br/>
                         <h5 class="card-title">{{ title }}</h5>
                         <p class="card-text text-capitalize"><strong>Theme</strong><br/> {{ theme }}</p>
                         <p class="card-text text-capitalize"><strong>Descripton</strong><br/> {{ description }}</p>
-                        <p class="card-text text-capitalize"><strong>Done</strong><br/> {{ done}}</p>
+                        <p class="card-text text-capitalize"><strong>Done</strong><br/> {{ done }}</p>
                     </div>
                 </div>
             </div>
