@@ -19,6 +19,9 @@ class SetForm(forms.ModelForm):
             'done': '',
         }
         widgets = { 
-            'title': forms.TextInput(attrs={'placeholder': 'Bricks & Sets'}),
-            'description': forms.TextInput(attrs={'placeholder': 'e.g. Color, Year, Details'}),
+            'theme': forms.Select(attrs={'class' : 'form-control'}),
+            'title': forms.TextInput(attrs={'class' : 'form-control', 
+                                    'placeholder': 'Bricks & Sets'}),
+            'description': forms.Textarea(attrs={'class' : 'form-control', 
+                                        'placeholder': 'e.g. color, year, details'}),
         }

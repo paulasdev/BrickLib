@@ -3,34 +3,42 @@
 
 {% block content %}
 
-<section class="account-container hero-container mt-2">
-    <div class="hero-text p-2 flex flex-column flex-md-row">
-        <div id="hero-text-container" class="p-4">
-            <div class="p-4">
-                <div class="p-4">
-                    <div class="p-4">
-                        <h1>Please enter your Set&Brick</h1>
-                        <br/><br/>
-                        {% if submitted %}
-                            Your Brick Set Was Submitted Succeffuly!!!
-                        {% else %}
-                
-                        
-                            <form action="" method=POST>
-                                {% csrf_token %}
-                
-                                 {{ form.as_p }}
-                              <input type="submit" value="Submit" class="btn btn-primary">
-                              
-                            </form>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
+<h1>Add your Set & Brick</h1>
+
+{% if submitted %}
+Your Brick & Set Was Submitted Succeffuly!!!
+{% else %}
+
+
+<div class="container bg-secondary">
+    <div class="row">
+      <div class="col align-self-center">
+        <img class="align-self-center mr-3"
+        src="https://res.cloudinary.com/drs3eqnpf/image/upload/v1674076342/BrickLib/lego_addset-removebg-preview_moi9f1.png"
+        alt="Lego man and computer on the desk">
+      </div>
+      <div class="col align-self-start">
+        <h5 class="mt-0">Please, enter with your Set & Brick information</h5>
+        <br/>
+        <div class="media-body">
+         
         
+        <form action="" method=POST>
+            {% csrf_token %}
+
+            {{ form.as_p }}
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
     </div>
-</section>
+      </div>
+      
+  </div>
+
+
+{% endif %}
+
 
 
 
