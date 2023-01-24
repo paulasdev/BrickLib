@@ -17,19 +17,16 @@ def set_list(request):
     return render(request, 'set_list.html', {
                       'set_list': set_list})
 
-
-class update_set(View):
     
-    def get(self, request, id, *args, **kwargs):
+def update_set(request, id):
         
-        set = get_object_or_404(Set, id=id)
-        form = SetForm(request.POST or None, instance=set)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect('/set_list?submitted=True')
+    set = get_object_or_404(Set, id=id)
+    form = SetForm(request.POST or None, instance=set)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect('/set_list')
 
-
-        return render(request, 'update_set.html', {'set': set, 'form': form},)
+    return render(request, 'update_set.html', {'set': set, 'form': form},)
 
 
 class show_set(View):
@@ -44,17 +41,6 @@ class show_set(View):
                                             'done': set.done,
                                             'description': set.description},)
 
-
-def search(request):
-    """ search function  """
-    if request.method == "POST":
-        searched = request.POST('searched')
-        sets = Set.objects.filter(name__contains=searched)
-
-        return render(request, 'search.html', {'searched': searched, 
-                      'sets': sets})
-    else: 
-        return render[request, 'search.html', {}]
 
 
 def add_set(request):
