@@ -28,6 +28,13 @@ def update_set(request, id):
 
     return render(request, 'update_set.html', {'set': set, 'form': form},)
 
+def delete_set(request, id):
+        
+    set = get_object_or_404(Set, id=id)
+    set.delete()
+    return HttpResponseRedirect('/set_list')
+
+
 
 class show_set(View):
     

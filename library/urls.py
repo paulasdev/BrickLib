@@ -7,4 +7,5 @@ urlpatterns = [
     path('set_list', views.set_list, name='set_list'),
     path('lego-set/<str:id>', views.show_set.as_view(), name='show_set'),
     path('lego-update/<str:id>', views.update_set, name='update_set'),
+    path('lego-delete/<str:id>', views.delete_set, name='delete_set'),
 ]
