@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 from .models import Set
 from .forms import SetForm
 
@@ -24,6 +25,7 @@ def update_set(request, id):
     form = SetForm(request.POST or None, instance=set)
     if form.is_valid():
         form.save()
+        messages.success(request, ('Your Brick & Sets Was Updated Successufully!!!'))
         return HttpResponseRedirect('/set_list')
 
     return render(request, 'update_set.html', {'set': set, 'form': form},)
@@ -32,8 +34,8 @@ def delete_set(request, id):
         
     set = get_object_or_404(Set, id=id)
     set.delete()
+    messages.success(request, ('Your Brick & Sets Was Deleted Successufully!!!'))
     return HttpResponseRedirect('/set_list')
-
 
 
 class show_set(View):
@@ -56,7 +58,8 @@ def add_set(request):
         form = SetForm(request.POST)
         if form.is_valid():
             form.save()
-        return HttpResponseRedirect('/add_set?submitted=True')
+        messages.success(request, ('Your Brick & Sets Was Created Successufully!!!'))
+        return HttpResponseRedirect('/set_list?submitted=True')
     else:
         form = SetForm
         if 'submitted' in request.GET:
