@@ -9,14 +9,13 @@ class SetForm(forms.ModelForm):
             'theme',
             'title',
             'description',
-            'done',
             'featured_image',
         ]
         label = {
             'theme': '',
             'title': '',
             'description': '', 
-            'done': '',
+            'fearured_image': '',
         }
         widgets = { 
             'theme': forms.Select(attrs={'class' : 'form-control'}),

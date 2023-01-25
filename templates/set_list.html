@@ -28,16 +28,42 @@
                              <p class="card-text text-capitalize"><strong>Theme</strong><br /> {{ set.theme }}</p>
                              <p class="card-text text-capitalize"><strong>Descripton</strong><br />
                                  {{ set.description }}</p>
+                             
+
                              <small class="text-muted">Last updated {{ set.created_on }}</small>
                              <div>
 
                                  <a href="{% url 'update_set' set.id %}" class="btn btn-primary right">Update</a>
-                                 <a href="{% url 'delete_set' set.id %}" class="btn btn-danger right">Delete</a>
+                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                     data-bs-target="#modal-{{ forloop.counter }}">
+                                     Delete
+                                 </button>
 
                              </div>
                          </div>
                      </div>
 
+                 </div>
+                 <!-- Modal -->
+                 <div class="modal fade" id="modal-{{ forloop.counter }}" tabindex="-1"
+                     aria-labelledby="modal-{{ forloop.counter }}" aria-hidden="true">
+                     <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <h1 class="modal-title fs-5" id="modal-{{ forloop.counter }}-label">Delete</h1>
+                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                     aria-label="Close"></button>
+                             </div>
+                             <div class="modal-body">
+                                Are you sure you want to delete this Set & Bricks?
+                             </div>
+                             <div class="modal-footer">
+                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+
+                                 <a href="{% url 'delete_set' set.id %}" class="btn btn-danger right">Delete</a>
+                             </div>
+                         </div>
+                     </div>
                  </div>
                  {% if forloop.counter|divisibleby:3 %}
              </div>
@@ -62,4 +88,5 @@
      </nav>
      {% endif %}
  </div>
+
  {%endblock%}

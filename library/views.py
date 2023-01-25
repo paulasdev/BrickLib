@@ -30,6 +30,7 @@ def update_set(request, id):
 
     return render(request, 'update_set.html', {'set': set, 'form': form},)
 
+
 def delete_set(request, id):
         
     set = get_object_or_404(Set, id=id)
@@ -51,11 +52,10 @@ class show_set(View):
                                             'description': set.description},)
 
 
-
 def add_set(request):
     submitted = False
     if request.method == "POST":
-        form = SetForm(request.POST)
+        form = SetForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
         messages.success(request, ('Your Brick & Sets Was Created Successufully!!!'))
