@@ -4,8 +4,8 @@
 {% block content %}
 
 
-<br/>
-<h1>Add your Set & Brick</h1>
+<h3 class="mt-3 text-center">Add your Brick & Set</h3>
+
 
 {% if submitted %}
 <div class="alert alert-primary" role="alert">
@@ -16,35 +16,34 @@
 
 
 <div class="container">
-    <div class="row">
-      <div class="col align-self-center">
-        <img class="align-self-center mr-3"
+  <div class="row justify-content-around">
+    <div class="col-sm-4">
+      <img class="align-self-center mr-3"
         src="https://res.cloudinary.com/drs3eqnpf/image/upload/v1674076342/BrickLib/lego_addset-removebg-preview_moi9f1.png"
         alt="Lego man and computer on the desk">
-      </div>
-      <div class="col align-self-start">
-        <h5 class="mt-0">Please, enter with your Set & Brick information</h5>
-        <br/>
-        <div class="media-body">
-         
-        
-        <form action="" method=POST enctype="multipart/form-data">
-            {% csrf_token %}
-
-            {{ form.as_p }}
-            
-            <input type="submit" value="Submit" class="btn btn-primary">
-        </form>
     </div>
-      </div>
+    <div class="col-sm-4">
+      <h5 class="mt-0">Please, enter with your Set & Brick information</h5>
+  
+
+        <form action="" method=POST enctype="multipart/form-data">
+          {% csrf_token %}
+
+          {{ form.as_p }}
+
+          <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+      <br/>
       
+    </div>
+
   </div>
 
 
-{% endif %}
+  {% endif %}
 
 
 
 
 
-{%endblock%}
+  {%endblock%}
