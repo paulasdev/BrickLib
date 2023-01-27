@@ -1,11 +1,12 @@
-#BrickLib
+# BrickLib
 
-Bricklib is a virtual platform for Lego collectors that allows users to create, search and share their collection with other users around the world.
+[BrickLib](https://bricklib.herokuapp.com/) is a virtual platform for Lego collectors that allows users to create, update and delete their collection with other users around the world.
 This site is built in Django using Python, Javascript, CSS and HTML to make it easy to keep track of your LEGO collection and the sets you want.
 
-![homepage](#)
+![BrickLib](docs/documentation/homepage.png)
 
-## Contents
+
+## Table of Contents
 
 * [User Experience](#user-experience)  
   * [User Stories](#user-stories)
@@ -26,6 +27,8 @@ This site is built in Django using Python, Javascript, CSS and HTML to make it e
   * [Languages](#languages)
   * [Frameworks and Libraries](#frameworks-and-libraries)
   * [Programs](#programs)
+
+* [Testing](#testing)
 
 * [Deployment](#deployment)
   * [Initial Deployment](#initial-deployment)
@@ -49,8 +52,16 @@ This site is built in Django using Python, Javascript, CSS and HTML to make it e
 The structure of the site is designed to be simple and easy to use with clear information and simple steps.
 
 * Users who want to keep track of their collection.
-* Users who want to search through more collections from different users
+* Users who want to see the collections from different users
 * Users who want to create their collection list and share it with other users.
+
+### User Profile
+* As a user I can register, sign up, sign out so that I can create my collections
+* As a Site User I can view a list of sets so that I can select one to read.
+* As a user I can sign in or sign out so that I can access the site or prevent others from accessing my profile
+* As a user I can update my set & bricks so that I am able to see my updates
+* As a User I can delete my set & bricks so that I can remove my sets & bricks
+
 
 ## User Goals
 
@@ -59,10 +70,25 @@ The structure of the site is designed to be simple and easy to use with clear in
 * The colors need to be compatible with the needs of the users.
 * The images need to be compatible with the needs of the users.
 
+#### Database Schema
+
+The database schema was planned using [DrawSQL app](https://drawsql.app/). 
+![atabase Schema Diagram](docs/wireframes/database_scheme.png)
+
 ## Design
+### Colour Scheme
+The colour schema was planned using [Coolors.co](https://coolors.co/)
+The choice of colors was based on Lego/Bricks colors that bring joy and fun.
+
+##### Typography 
+Roboto and Lato fonts were chosen to make it easier for the user to read.
+
+##### Images
+All images are from [Istock.com]https://www.istockphoto.com/
+
 ### Wireframes
 
-Wireframes were created using [Balsamiq](https://balsamiq.com/) and exported into a png format, which can be viewed [here](assets/wireframes).
+Wireframes were created using [Balsamiq](https://balsamiq.com/) and exported into a png format, which can be viewed [here](docs/wireframes).
 
 #### Technologies Used
 
@@ -123,6 +149,9 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/) and exported int
 * The Cloudinary documentation was used extensively during development to setup the configuration between django and the cloudinary apis
 * The Code Institute reference material was used as a general reference for things that I had previously done during the course.
 * All other resources used are referenced where appropriate.
+
+## Testing 
+ Utilised a manual testing strategy for the development of the site, wich can be view [here](TESTING.md).
 
 
 ## Deployment
