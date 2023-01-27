@@ -127,7 +127,7 @@ Wireframes were created using [Balsamiq](https://balsamiq.com/) and exported int
 
 ## Deployment
 
-The site was deployed via Heroku, and the live link can be found here - [The BrickLib]()
+The site was deployed via Heroku, and the live link can be found here - [BrickLib](https://bricklib.herokuapp.com/)
 
 ### Project Deployment
 
